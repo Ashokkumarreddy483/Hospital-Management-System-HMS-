@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"], input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <form action="AppointmentServlet" method="post">
+        <h2>Appointment Form</h2>
+
+        <!-- Appointment ID -->
+        <label for="appointment_id">Appointment ID</label>
+        <input type="text" id="appointment_id" name="appointment_id" required>
+
+        <!-- Patient Name -->
+        <label for="patient_name">Patient Name</label>
+        <input type="text" id="patient_name" name="patient_name" required>
+
+        <!-- Doctor Name -->
+        <label for="doctor_name">Doctor Name</label>
+        <input type="text" id="doctor_name" name="doctor_name" required>
+
+        <!-- Appointment Date -->
+        <label for="appointment_date">Appointment Date</label>
+        <input type="date" id="appointment_date" name="appointment_date" required>
+
+        <!-- Status -->
+        <label for="status">Status</label>
+        <input type="text" id="status" name="status" required>
+
+        <!-- Created At -->
+        <label for="created_at">Created At</label>
+        <input type="datetime-local" id="created_at" name="created_at" required>
+
+        <!-- Updated At -->
+        <label for="updated_at">Updated At</label>
+        <input type="datetime-local" id="updated_at" name="updated_at" required>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

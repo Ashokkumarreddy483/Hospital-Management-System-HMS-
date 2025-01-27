@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing and Claims Process</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        label {
+            font-size: 1em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 738px) {
+            section {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            label {
+                font-size: 0.9em;
+            }
+
+            button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Billing and Claims Process</h1>
+    </header>
+
+    <section>
+        <form action="PatientBillServlet" method="POST">
+            <fieldset>
+                <legend>Patient Information</legend>
+
+                <label for="PATIENT_NAME">Patient Name:</label>
+                <input type="text" id="PATIENT_NAME" name="PATIENT_NAME" required placeholder="Enter patient name"><br>
+
+                <label for="SERVICE">Service Type:</label>
+                <select id="SERVICE" name="SERVICE" required>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Lab Tests">Lab Tests</option>
+                    <option value="Surgery">Surgery</option>
+                    <option value="Medication">Medication</option>
+                </select><br>
+
+                <label for="INSURANCE">Insurance Provider (Optional):</label>
+                <input type="text" id="INSURANCE" name="INSURANCE" placeholder="Enter insurance provider (if any)"><br>
+
+                <label for="POLICY_NUMBER">Policy Number (If Insured):</label>
+                <input type="text" id="POLICY_NUMBER" name="POLICY_NUMBER" placeholder="Enter policy number"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Billing Details</legend>
+
+                <label for="BILL_DATE">Billing Date:</label>
+                <input type="date" id="BILL_DATE" name="BILL_DATE" required><br>
+
+                <label for="TOTAL_COST">Total Cost ($):</label>
+                <input type="number" id="TOTAL_COST" name="TOTAL_COST" required placeholder="Enter total cost"><br>
+
+                <label for="STATUS">Claim Status:</label>
+                <select id="STATUS" name="STATUS">
+                    <option value="Pending">Pending</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Denied">Denied</option>
+                </select><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Notes</legend>
+                <label for="NOTES">Notes (Optional):</label><br>
+                <textarea id="NOTES" name="NOTES" rows="4" cols="50" placeholder="Enter additional notes if any"></textarea><br>
+            </fieldset>
+
+            <button type="submit">Submit Claim</button>
+        </form>
+    </section>
+
+   
+
+</body>
+
+</html>

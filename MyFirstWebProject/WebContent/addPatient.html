@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Patient</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #4a4a4a;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    input[type="text"], input[type="number"], input[type="tel"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-top: 4px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .form-group.error input {
+      border-color: red;
+    }
+    .form-group .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+      label {
+        font-size: 16px;
+      }
+      button {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Patient</h1>
+    <form action="AddPatientServlet" method="POST" onsubmit="return validateForm()">
+      
+      <div class="form-group">
+        <label for="patientName">Patient Name</label>
+        <input type="text" id="patientName" name="patientName" required placeholder="Enter patient's full name">
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="patientAge">Age</label>
+        <input type="number" id="patientAge" name="patientAge" required min="1" max="120" placeholder="Enter patient's age">
+        <div class="error" id="ageError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="patientContact">Contact Number</label>
+        <input type="tel" id="patientContact" name="patientContact" required pattern="[0-9]{10}" placeholder="Enter 10-digit contact number">
+        <div class="error" id="contactError"></div>
+      </div>
+
+      <button type="submit">Add Patient</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      let isValid = true;
+      const nameField = document.getElementById('patientName');
+      const ageField = document.getElementById('patientAge');
+      const contactField = document.getElementById('patientContact');
+      const nameError = document.getElementById('nameError');
+      const ageError = document.getElementById('ageError');
+      const contactError = document.getElementById('contactError');
+
+      nameError.textContent = '';
+      ageError.textContent = '';
+      contactError.textContent = '';
+
+      if (nameField.value.trim() === '') {
+        nameError.textContent = 'Please enter a valid name.';
+        isValid = false;
+      }
+      if (ageField.value < 1 || ageField.value > 120) {
+        ageError.textContent = 'Please enter a valid age between 1 and 120.';
+        isValid = false;
+      }
+      if (!/^\d{10}$/.test(contactField.value)) {
+        contactError.textContent = 'Please enter a valid 10-digit contact number.';
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>

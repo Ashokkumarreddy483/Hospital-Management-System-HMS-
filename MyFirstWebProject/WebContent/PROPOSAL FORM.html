@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Form for Health Insurance Policies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .form-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Claim Form for Health Insurance Policies Other Than Travel and Personal Accident - Part A</h2>
+        <p>TO BE FILLED BY THE INSURED</p>
+        
+        <div class="disclaimer">
+            <p><strong>Important:</strong> The issue of this form is not to be taken as an admission of liability.</p>
+        </div>
+
+        <form action="#" method="post">
+            <!-- Insured Information -->
+            <div class="form-group">
+                <label for="policyNumber">Policy Number</label>
+                <input type="text" id="policyNumber" name="policyNumber" required placeholder="Enter your policy number">
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Full Name of the Insured</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required placeholder="Enter your contact number">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required placeholder="Enter your address"></textarea>
+            </div>
+
+            <!-- Claim Details -->
+            <div class="form-group">
+                <label for="hospitalName">Name of the Hospital/Clinic</label>
+                <input type="text" id="hospitalName" name="hospitalName" required placeholder="Enter the hospital/clinic name">
+            </div>
+
+            <div class="form-group">
+                <label for="admissionDate">Date of Admission</label>
+                <input type="date" id="admissionDate" name="admissionDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dischargeDate">Date of Discharge</label>
+                <input type="date" id="dischargeDate" name="dischargeDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="treatmentDetails">Details of Treatment</label>
+                <textarea id="treatmentDetails" name="treatmentDetails" rows="4" required placeholder="Describe the treatment received"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="totalClaimAmount">Total Claim Amount</label>
+                <input type="number" id="totalClaimAmount" name="totalClaimAmount" required placeholder="Enter the total claim amount">
+            </div>
+
+            <div class="form-group">
+                <label for="reasonForClaim">Reason for Claim</label>
+                <textarea id="reasonForClaim" name="reasonForClaim" rows="4" required placeholder="Explain the reason for the claim"></textarea>
+            </div>
+
+            <!-- Agreement and Submit -->
+            <div class="form-group">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">I confirm that the information provided is accurate and true to the best of my knowledge.</label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit Claim Form">
+            </div>
+        </form>
+
+        <div class="form-footer">
+            <p>If you have any questions, please contact our support team.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

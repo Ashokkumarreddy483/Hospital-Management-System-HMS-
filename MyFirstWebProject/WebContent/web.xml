@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Resource Reference for HospitalDB (should be in context.xml, not web.xml) -->
+    <resource-ref>
+        <description>HospitalDB DataSource</description>
+        <res-ref-name>jdbc/HospitalDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <!-- Servlet for Insurance Application -->
+    <servlet>
+        <servlet-name>InsuranceApplicationServlet</servlet-name>
+        <servlet-class>com.example.InsuranceApplicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsuranceApplicationServlet</servlet-name>
+        <url-pattern>/InsuranceApplicationServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Patient Bill -->
+    <servlet>
+        <servlet-name>PatientBillServlet</servlet-name>
+        <servlet-class>comm.sssit.PatientBillServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientBillServlet</servlet-name>
+        <url-pattern>/patientBillServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- JSP Servlet (only one declaration needed) -->
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>jspFile</param-name>
+            <param-value>/WEB-INF/jsp</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+
+    <!-- Add Patient Servlet -->
+    <servlet>
+        <servlet-name>AddPatientServlet</servlet-name>
+        <servlet-class>src.HospitalManagementSystem.AddPatientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddPatientServlet</servlet-name>
+        <url-pattern>/AddPatientServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>BookAppointmentServlet</servlet-name>
+        <servlet-class>your.package.BookAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookAppointmentServlet</servlet-name>
+        <url-pattern>/BookAppointmentServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
